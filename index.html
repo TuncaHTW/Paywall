@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="style.css">
     <script>
         function removeWidget() {
+            // Overlay ausblenden
             document.getElementById('overlayWidget').style.display = 'none';
+            // Glückwunsch-DIV anzeigen
             document.getElementById('congratulations').style.display = 'block';
+
+            // Nach kurzer Zeit (1,5 Sekunden) zu Level 2 weiterleiten
             setTimeout(() => {
                 window.location.href = 'level2.html';
             }, 1500);
@@ -29,10 +33,10 @@
     </div>
 </div>
 
-<div id="congratulations" style="display:none;">
+<div id="congratulations" style="display:none; text-align:center; margin-top:2rem;">
     <h1>Glückwunsch!</h1>
     <p>Level 1 wurde erfolgreich abgeschlossen.</p>
-    <img src="img/htw_logo.jpeg" alt="HTW Berlin Logo" class="logo">
+    <img src="img/htw_logo.jpeg" alt="HTW Berlin Logo" class="logo" style="height:60px; margin-top:1rem;">
 </div>
 </body>
 </html>
