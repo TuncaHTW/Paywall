@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,15 +17,16 @@
         }
 
         window.onload = function() {
-            // Overlay erzeugen
             var overlay = document.createElement('div');
             overlay.id = 'lvl2Overlay';
-            overlay.className = 'paywall-overlay';
+            overlay.className = 'overlay';
             overlay.innerHTML = `
-                <div>
-                    <h2>Bitte Seite freischalten</h2>
-                    <p>Der Inhalt dieser Seite ist nur für Premium-Nutzer freigeschaltet.<br>
-                    Sie können erst auf "Weiter" klicken, wenn Sie bezahlt haben.</p>
+                <div class="card">
+                    <div class="card-content">
+                        <h2>Bitte Seite freischalten</h2>
+                        <p>Der Inhalt dieser Seite ist nur für Premium-Nutzer freigeschaltet.<br>
+                        Sie können erst auf "Weiter" klicken, wenn Sie bezahlt haben.</p>
+                    </div>
                     <div class="card-buttons">
                         <button class="button button-orange" disabled>Weiter</button>
                         <button class="button button-orange" onclick="alert('Niemand hat vor eine Bezahlung anzunehmen')">Bezahlen</button>
@@ -35,16 +37,18 @@
         }
     </script>
 </head>
+
 <body>
 <div class="card">
     <img src="img/htw_logo.jpeg" alt="HTW Berlin Logo" class="logo">
     <div class="card-content">
-        <h2>Level 2 – Die Token-Challenge</h2>
-        <p>Finde heraus, wie du die Paywall umgehen kannst. Der "Weiter"-Button ist erst aktiv, wenn du den richtigen Token gesetzt hast.</p>
+        <h2>Level 2 – Token Challenge</h2>
+        <p>Finde heraus, wie du die Paywall umgehen kannst. Der "Weiter"-Button funktioniert erst, wenn der richtige Token gesetzt ist.</p>
     </div>
     <div class="card-buttons">
         <button class="button button-orange" id="weiterBtn" onclick="goToLevel3()">Weiter zu Level 3</button>
     </div>
 </div>
 </body>
+
 </html>
