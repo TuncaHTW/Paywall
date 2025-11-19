@@ -1,52 +1,56 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 50px;
-    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
 }
 
 .card {
-    background: white;
+    max-width: 600px;
+    margin: 5% auto;
+    background: #fff;
+    padding: 2rem;
     border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: center;
 }
 
-.card-content {
-    margin-bottom: 20px;
-}
-
-.card-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+.card-content p {
+    margin-bottom: 1rem;
 }
 
 .button {
-    padding: 10px 20px;
+    padding: 0.7rem 1.5rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .button-orange {
-    background-color: rgb(1, 157, 58);
+    background-color: #ff8800;
     color: white;
 }
 
 .button-orange:disabled {
-    background-color: grey;
+    background-color: #ccc;
     cursor: not-allowed;
 }
 
-.congratulations {
-    margin-top: 50px;
-    font-size: 24px;
-    font-weight: bold;
+.logo {
+    height: 60px;
+    margin-bottom: 1rem;
 }
 
-.logo {
-    margin-top: 20px;
+.paywall-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    text-align: center;
+    padding: 1rem;
 }

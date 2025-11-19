@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTW Paywall Demo – Level 3</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function(){
+      // Verschleierter Token
+      const t1 = atob("SFRX");       // "HTW"
+      const t2 = atob("LTEzMzc=");   // "-1337"
+      const token = t1 + t2;
+
+      if(localStorage.getItem("t") !== token){
+        document.body.innerHTML = "<div class='card'><h1>Zugriff verweigert!</h1><p>Finde den richtigen Token heraus, um weiterzukommen.</p></div>";
+      }
+    })();
+  </script>
+</head>
+<body>
+<div class="card">
+  <img src="img/htw_logo.jpeg" alt="HTW Berlin Logo" class="logo">
+  <div class="card-content">
+    <h2>Level 3 – Obfuscated Token</h2>
+    <p>Um weiterzukommen, musst du den obfuscierten Token verstehen und setzen:</p>
+    <p>DevTools: <code>localStorage.setItem("t","HTW-1337")</code></p>
+    <p>Danach Seite neu laden → Erfolg!</p>
+  </div>
+</div>
+</body>
+</html>

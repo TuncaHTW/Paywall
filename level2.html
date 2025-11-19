@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTW Paywall Demo – Level 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function goToLevel3() {
+            const token = localStorage.getItem("premiumToken");
+            if (token === "HTW-1337") {
+                window.location.href = 'level3.html';
+            } else {
+                alert("Zugriff verweigert. Finde den Token!");
+            }
+        }
+
+        window.onload = function() {
+            // Overlay erzeugen
+            var overlay = document.createElement('div');
+            overlay.id = 'lvl2Overlay';
+            overlay.className = 'paywall-overlay';
+            overlay.innerHTML = `
+                <div>
+                    <h2>Bitte Seite freischalten</h2>
+                    <p>Der Inhalt dieser Seite ist nur für Premium-Nutzer freigeschaltet.<br>
+                    Sie können erst auf "Weiter" klicken, wenn Sie bezahlt haben.</p>
+                    <div class="card-buttons">
+                        <button class="button button-orange" disabled>Weiter</button>
+                        <button class="button button-orange" onclick="alert('Niemand hat vor eine Bezahlung anzunehmen')">Bezahlen</button>
+                    </div>
+                </div>`;
+            document.body.appendChild(overlay);
+            document.body.style.overflow = 'hidden';
+        }
+    </script>
+</head>
+<body>
+<div class="card">
+    <img src="img/htw_logo.jpeg" alt="HTW Berlin Logo" class="logo">
+    <div class="card-content">
+        <h2>Level 2 – Die Token-Challenge</h2>
+        <p>Finde heraus, wie du die Paywall umgehen kannst. Der "Weiter"-Button ist erst aktiv, wenn du den richtigen Token gesetzt hast.</p>
+    </div>
+    <div class="card-buttons">
+        <button class="button button-orange" id="weiterBtn" onclick="goToLevel3()">Weiter zu Level 3</button>
+    </div>
+</div>
+</body>
+</html>
