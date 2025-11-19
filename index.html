@@ -7,12 +7,17 @@
     <link rel="stylesheet" href="style.css">
     <script>
         function removeWidget() {
-            // Overlay ausblenden
-            document.getElementById('overlayWidget').style.display = 'none';
+            // Overlay komplett aus dem DOM entfernen
+            var overlay = document.getElementById('overlayWidget');
+            overlay.parentNode.removeChild(overlay);
+
+            // Scrollen wieder aktivieren
+            document.body.style.overflow = '';
+
             // Glückwunsch-DIV anzeigen
             document.getElementById('congratulations').style.display = 'block';
 
-            // Nach kurzer Zeit (1,5 Sekunden) zu Level 2 weiterleiten
+            // Nach kurzer Zeit zu Level 2 weiterleiten
             setTimeout(() => {
                 window.location.href = 'level2.html';
             }, 1500);
